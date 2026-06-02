@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <title>Contacto | Destellos</title>
+</head>
+<body>
+<input type="checkbox" id="menu-toggle">
+
+<header class="header">
+    <div class="header-left">
+        <label for="menu-toggle" class="hamburger" aria-label="Abrir menú">☰</label>
+
+        <a href="index.html" class="brand">
+            <img src="img/logo.svg" alt="Logo Destellos" class="logo">
+            <span>Destellos</span>
+        </a>
+    </div>
+
+    <p class="slogan">Brilla por dentro y por fuera</p>
+
+    <button class="cart-button" onclick="toggleCart()" aria-label="Abrir carrito">
+        🛒 <span id="cart-count">0</span>
+    </button>
+</header>
+
+<div class="layout">
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Página principal</a></li>
+                <li><a href="quienes-somos.html">Quiénes somos</a></li>
+
+                <li class="menu-group">
+                    <details open>
+                        <summary>Joyería</summary>
+                        <ul class="submenu">
+                            <li><a href="anillos.html">Anillos</a></li>
+                            <li><a href="aretes.html">Aretes</a></li>
+                            <li><a href="collares.html">Collares</a></li>
+                            <li><a href="pulseras.html">Pulseras</a></li>
+                            <li><a href="jueguitos.html">Jueguitos</a></li>
+                            <li><a href="cadenas.html">Cadenas</a></li>
+                        </ul>
+                    </details>
+                </li>
+
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="content">
+
+<section class="page-banner">
+    <span class="eyebrow">Estamos para ayudarte</span>
+    <h1>Contacto</h1>
+    <p>Escríbenos para consultar disponibilidad, precios, pedidos especiales o entregas.</p>
+</section>
+
+<section class="contact-grid">
+    <div class="info-section">
+        <h2>Hablemos de joyas</h2>
+        <p><strong>WhatsApp:</strong> +506 8888-8888</p>
+        <p><strong>Correo:</strong> contacto@destellos.com</p>
+        <p><strong>Horario:</strong> Lunes a sábado, 9:00 a. m. - 6:00 p. m.</p>
+    </div>
+
+    <form class="contact-form">
+        <h2>Envíanos un mensaje</h2>
+        <input type="text" placeholder="Tu nombre" required>
+        <input type="email" placeholder="Tu correo" required>
+        <textarea placeholder="Escribe tu mensaje" required></textarea>
+        <button type="submit">Enviar mensaje</button>
+    </form>
+</section>
+
+    </main>
+</div>
+
+<a
+    class="whatsapp-float"
+    href="https://wa.me/50688857768?text=Hola%20Destellos%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20joyas."
+    target="_blank"
+    aria-label="Contactar por WhatsApp">
+    ✆
+</a>
+
+<div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+
+<section class="cart-panel" id="cart-panel" aria-label="Carrito de compras">
+    <div class="cart-header">
+        <h2>Tu carrito</h2>
+        <button onclick="toggleCart()" class="close-cart">×</button>
+    </div>
+
+    <div id="cart-items" class="cart-items">
+        <p class="empty-cart">Tu carrito está vacío.</p>
+    </div>
+
+    <div class="cart-footer">
+        <p>Total: <strong id="cart-total">₡0</strong></p>
+        <button onclick="clearCart()" class="clear-cart">Vaciar carrito</button>
+        <a
+            id="checkout-whatsapp"
+            href="https://wa.me/50688888888"
+            target="_blank"
+            class="checkout-button">
+            Comprar por WhatsApp
+        </a>
+    </div>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>

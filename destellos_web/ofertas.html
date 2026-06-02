@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <title>Ofertas | Destellos</title>
+</head>
+<body>
+<input type="checkbox" id="menu-toggle">
+
+<header class="header">
+    <div class="header-left">
+        <label for="menu-toggle" class="hamburger" aria-label="Abrir menú">☰</label>
+
+        <a href="index.html" class="brand">
+            <img src="img/logo.svg" alt="Logo Destellos" class="logo">
+            <span>Destellos</span>
+        </a>
+    </div>
+
+    <p class="slogan">Brilla por dentro y por fuera</p>
+
+    <button class="cart-button" onclick="toggleCart()" aria-label="Abrir carrito">
+        🛒 <span id="cart-count">0</span>
+    </button>
+</header>
+
+<div class="layout">
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Página principal</a></li>
+                <li><a href="quienes-somos.html">Quiénes somos</a></li>
+
+                <li class="menu-group">
+                    <details open>
+                        <summary>Joyería</summary>
+                        <ul class="submenu">
+                            <li><a href="anillos.html">Anillos</a></li>
+                            <li><a href="aretes.html">Aretes</a></li>
+                            <li><a href="collares.html">Collares</a></li>
+                            <li><a href="pulseras.html">Pulseras</a></li>
+                            <li><a href="jueguitos.html">Jueguitos</a></li>
+                            <li><a href="cadenas.html">Cadenas</a></li>
+                        </ul>
+                    </details>
+                </li>
+
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="content">
+
+<section class="page-banner">
+    <span class="eyebrow">Precios especiales</span>
+    <h1>Ofertas</h1>
+    <p>Encuentra piezas seleccionadas con descuentos para que sigas brillando.</p>
+</section>
+
+<section class="products-section">
+    <h2 class="section-title">Joyas en oferta</h2>
+    <div class="cards-container">
+        <article class="card">
+    <img src="img/oferta.svg" alt="Aretes Estrella - Oferta">
+    <div class="card-content">
+        <h3>Aretes Estrella - Oferta</h3>
+        <p class="description">Aretes brillantes con precio especial por temporada.</p>
+        <p class="price">₡7.500</p>
+        <button onclick="addToCart('Aretes Estrella - Oferta'. 7500. 'img/oferta.svg')">Agregar al carrito</button>
+    </div>
+</article>
+<article class="card">
+    <img src="img/oferta.svg" alt="Pulsera Rosa - Oferta">
+    <div class="card-content">
+        <h3>Pulsera Rosa - Oferta</h3>
+        <p class="description">Pulsera romántica con descuento especial.</p>
+        <p class="price">₡8.900</p>
+        <button onclick="addToCart('Pulsera Rosa - Oferta'. 8900. 'img/oferta.svg')">Agregar al carrito</button>
+    </div>
+</article>
+<article class="card">
+    <img src="img/oferta.svg" alt="Cadena Luz - Oferta">
+    <div class="card-content">
+        <h3>Cadena Luz - Oferta</h3>
+        <p class="description">Cadena fina y elegante con precio promocional.</p>
+        <p class="price">₡11.900</p>
+        <button onclick="addToCart('Cadena Luz - Oferta'. 11900. 'img/oferta.svg')">Agregar al carrito</button>
+    </div>
+</article>
+    </div>
+</section>
+
+    </main>
+</div>
+
+<a
+    class="whatsapp-float"
+    href="https://wa.me/50688857768?text=Hola%20Destellos%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20joyas."
+    target="_blank"
+    aria-label="Contactar por WhatsApp">
+    ✆
+</a>
+
+<div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+
+<section class="cart-panel" id="cart-panel" aria-label="Carrito de compras">
+    <div class="cart-header">
+        <h2>Tu carrito</h2>
+        <button onclick="toggleCart()" class="close-cart">×</button>
+    </div>
+
+    <div id="cart-items" class="cart-items">
+        <p class="empty-cart">Tu carrito está vacío.</p>
+    </div>
+
+    <div class="cart-footer">
+        <p>Total: <strong id="cart-total">₡0</strong></p>
+        <button onclick="clearCart()" class="clear-cart">Vaciar carrito</button>
+        <a
+            id="checkout-whatsapp"
+            href="https://wa.me/50688888888"
+            target="_blank"
+            class="checkout-button">
+            Comprar por WhatsApp
+        </a>
+    </div>
+</section>
+
+<script src="script.js"></script>
+
+</body>
+</html>
