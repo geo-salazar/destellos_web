@@ -23,9 +23,19 @@
 
     <p class="slogan">Brilla por dentro y por fuera</p>
 
-    <button class="cart-button" onclick="toggleCart()" aria-label="Abrir carrito">
+    <div class="header-actions">
+    <a href="iniciar-sesion.html" class="login-button">
+        Iniciar sesión
+    </a>
+
+    <a href="registro.html" class="register-button">
+        Registrarse
+    </a>
+
+    <button class="cart-button" onclick="toggleCart()">
         🛒 <span id="cart-count">0</span>
     </button>
+</div>
 </header>
 
 <div class="layout">
@@ -34,7 +44,9 @@
             <ul>
                 <li><a href="index.html">Página principal</a></li>
                 <li><a href="quienes-somos.html">Quiénes somos</a></li>
-
+                <li><a href="iniciar-sesion.html">Iniciar sesión</a></li>
+                <li><a href="registro.html">Registrarse</a></li>
+                
                 <li class="menu-group">
                     <details open>
                         <summary>Joyería</summary>
