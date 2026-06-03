@@ -691,8 +691,18 @@ textarea:focus {
 
 @media screen and (max-width: 900px) {
     .header {
-        grid-template-columns: auto 1fr auto;
+        grid-template-columns: 1fr auto;
         padding: 12px 16px;
+    }
+
+    .header-left {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .header-actions {
+        grid-column: 2;
+        grid-row: 1;
     }
 
     .hamburger {
@@ -709,6 +719,9 @@ textarea:focus {
     }
 
     .slogan {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        margin-top: 4px;
         font-size: 15px;
     }
 
