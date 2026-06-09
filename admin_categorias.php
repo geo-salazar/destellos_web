@@ -22,7 +22,7 @@ if (isset($_GET['eliminar'])) {//si el boton de eliminar fue presionado
     $stmt = $pdo->prepare("DELETE FROM categorias WHERE id = ?");
     $stmt->execute([$_GET['eliminar']]);
 }
-
+//kwrnkwejfhkewjfnklwenfkwlfnlw
 // Cargar datos para editar
 $cat_editar = null;
 if (isset($_GET['editar'])) {
