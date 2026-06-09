@@ -48,7 +48,11 @@ $categorias = $pdo->query("SELECT id, nombre FROM categorias")->fetchAll();
 
         <section class="contact-form admin-section-spacing">
             <form method="POST">
+<<<<<<< HEAD
                 <h3><?= $prod_editar ? 'Editar Productos' : 'Nuevo Producto' ?></h3>
+=======
+                <h3><?= $prod_editar ? 'Editar Productddo' : 'Nuevo Producto' ?></h3>
+>>>>>>> d0b35b8e4b4ec45db21648312ca41a56f50ef99d
                 <?php if($prod_editar): ?>
                     <input type="hidden" name="id" value="<?= $prod_editar['id'] ?>">
                 <?php endif; ?>
