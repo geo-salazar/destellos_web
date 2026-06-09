@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <title>Anillos | Destellos</title>
+    <title>Contacto | Destellos</title>
 </head>
 <body>
 <input type="checkbox" id="menu-toggle">
@@ -15,7 +15,7 @@
     <div class="header-left">
         <label for="menu-toggle" class="hamburger" aria-label="Abrir menú">☰</label>
 
-        <a href="index.html" class="brand">
+        <a href="index.php" class="brand">
             <img src="img/logo.svg" alt="Logo Destellos" class="logo">
             <span>Destellos</span>
         </a>
@@ -24,11 +24,15 @@
     <p class="slogan">Brilla por dentro y por fuera</p>
 
     <div class="header-actions">
-        <a href="iniciar-sesion.html" class="login-button">
+        <a href="ofertas.php" class="offers-button">
+            Ofertas
+        </a>
+
+        <a href="iniciar-sesion.php" class="login-button">
             Iniciar sesión
         </a>
 
-        <a href="registro.html" class="register-button">
+        <a href="registro.php" class="register-button">
             Registrarse
         </a>
 
@@ -37,31 +41,29 @@
         </button>
     </div>
 </header>
-
 <div class="layout">
     <aside class="sidebar">
         <nav>
             <ul>
-                <li><a href="index.html">Página principal</a></li>
-                <li><a href="quienes-somos.html">Quiénes somos</a></li>
-               
+                <li><a href="index.php">Página principal</a></li>
+                <li><a href="quienes-somos.php">Quiénes somos</a></li>
+              
 
                 <li class="menu-group">
                     <details open>
                         <summary>Joyería</summary>
                         <ul class="submenu">
-                            <li><a href="anillos.html">Anillos</a></li>
-                            <li><a href="aretes.html">Aretes</a></li>
-                            <li><a href="collares.html">Collares</a></li>
-                            <li><a href="pulseras.html">Pulseras</a></li>
-                            <li><a href="jueguitos.html">Jueguitos</a></li>
-                            <li><a href="cadenas.html">Cadenas</a></li>
+                            <li><a href="anillos.php">Anillos</a></li>
+                            <li><a href="aretes.php">Aretes</a></li>
+                            <li><a href="collares.php">Collares</a></li>
+                            <li><a href="pulseras.php">Pulseras</a></li>
+                            <li><a href="jueguitos.php">Jueguitos</a></li>
+                            <li><a href="cadenas.php">Cadenas</a></li>
                         </ul>
                     </details>
                 </li>
 
-                <li><a href="ofertas.html">Ofertas</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="contacto.php">Contacto</a></li>
             </ul>
         </nav>
     </aside>
@@ -69,42 +71,27 @@
     <main class="content">
 
 <section class="page-banner">
-    <span class="eyebrow">Colección Destellos</span>
-    <h1>Anillos</h1>
-    <p>Piezas delicadas para manos que cuentan historias.</p>
+    <div style="display: flex; align-items: baseline; gap: 25px;">
+        <h2 class="section-title">Contacto</h2>
+        <p>Escríbenos para consultar disponibilidad, precios, pedidos especiales o entregas.</p>
+    </div>
 </section>
 
-<section class="products-section">
-    <h2 class="section-title">Anillos</h2>
-    <div class="cards-container">
-        <article class="card">
-    <img src="img/anillo.svg" alt="Anillo Rose">
-    <div class="card-content">
-        <h3>Anillo Rose</h3>
-        <p class="description">Anillo delicado con acabado brillante. ideal para un estilo romántico.</p>
-        <p class="price">₡12.500</p>
-        <button onclick="addToCart('Anillo Rose', 12500, 'img/anillo.svg')">Agregar al carrito</button>
+<section class="contact-grid">
+    <div class="info-section">
+        <h2>Hablemos de joyas</h2>
+        <p><strong>WhatsApp:</strong> +506 8885-7768</p>
+        <p><strong>Correo:</strong> contacto@destellos.com</p>
+        <p><strong>Horario:</strong> Lunes a viernes, 9:00 a. m. - 5:00 p. m.</p>
     </div>
-</article>
-<article class="card">
-    <img src="img/anillo.svg" alt="Anillo Princesa">
-    <div class="card-content">
-        <h3>Anillo Princesa</h3>
-        <p class="description">Diseño elegante con un toque luminoso para ocasiones especiales.</p>
-        <p class="price">₡14.900</p>
-        <button onclick="addToCart('Anillo Princesa', 14900, 'img/anillo.svg')">Agregar al carrito</button>
-    </div>
-</article>
-<article class="card">
-    <img src="img/anillo.svg" alt="Anillo Corazón">
-    <div class="card-content">
-        <h3>Anillo Corazón</h3>
-        <p class="description">Pieza femenina y dulce para regalar o consentirte.</p>
-        <p class="price">₡9.900</p>
-        <button onclick="addToCart('Anillo Corazón', 9900, 'img/anillo.svg')">Agregar al carrito</button>
-    </div>
-</article>
-    </div>
+
+    <form class="contact-form">
+        <h2>Envíanos un mensaje</h2>
+        <input type="text" placeholder="Tu nombre" required>
+        <input type="email" placeholder="Tu correo" required>
+        <textarea placeholder="Escribe tu mensaje" required></textarea>
+        <button type="submit">Enviar mensaje</button>
+    </form>
 </section>
 
     </main>
@@ -135,7 +122,7 @@
         <button onclick="clearCart()" class="clear-cart">Vaciar carrito</button>
         <a
             id="checkout-whatsapp"
-            href="https://wa.me/50688888888"
+            href="https://wa.me/50688857768"
             target="_blank"
             class="checkout-button">
             Comprar por WhatsApp

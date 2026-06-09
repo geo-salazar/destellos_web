@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <title>Ofertas | Destellos</title>
+    <title>Quiénes somos | Destellos</title>
 </head>
 <body>
 <input type="checkbox" id="menu-toggle">
@@ -15,7 +15,7 @@
     <div class="header-left">
         <label for="menu-toggle" class="hamburger" aria-label="Abrir menú">☰</label>
 
-        <a href="index.html" class="brand">
+        <a href="index.php" class="brand">
             <img src="img/logo.svg" alt="Logo Destellos" class="logo">
             <span>Destellos</span>
         </a>
@@ -24,11 +24,15 @@
     <p class="slogan">Brilla por dentro y por fuera</p>
 
     <div class="header-actions">
-        <a href="iniciar-sesion.html" class="login-button">
+        <a href="ofertas.php" class="offers-button">
+            Ofertas
+        </a>
+
+        <a href="iniciar-sesion.php" class="login-button">
             Iniciar sesión
         </a>
 
-        <a href="registro.html" class="register-button">
+        <a href="registro.php" class="register-button">
             Registrarse
         </a>
 
@@ -42,26 +46,25 @@
     <aside class="sidebar">
         <nav>
             <ul>
-                <li><a href="index.html">Página principal</a></li>
-                <li><a href="quienes-somos.html">Quiénes somos</a></li>
-             
+                <li><a href="index.php">Página principal</a></li>
+                <li><a href="quienes-somos.php">Quiénes somos</a></li>
+              
 
                 <li class="menu-group">
                     <details open>
                         <summary>Joyería</summary>
                         <ul class="submenu">
-                            <li><a href="anillos.html">Anillos</a></li>
-                            <li><a href="aretes.html">Aretes</a></li>
-                            <li><a href="collares.html">Collares</a></li>
-                            <li><a href="pulseras.html">Pulseras</a></li>
-                            <li><a href="jueguitos.html">Jueguitos</a></li>
-                            <li><a href="cadenas.html">Cadenas</a></li>
+                            <li><a href="anillos.php">Anillos</a></li>
+                            <li><a href="aretes.php">Aretes</a></li>
+                            <li><a href="collares.php">Collares</a></li>
+                            <li><a href="pulseras.php">Pulseras</a></li>
+                            <li><a href="jueguitos.php">Jueguitos</a></li>
+                            <li><a href="cadenas.php">Cadenas</a></li>
                         </ul>
                     </details>
                 </li>
 
-                <li><a href="ofertas.html">Ofertas</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="contacto.php">Contacto</a></li>
             </ul>
         </nav>
     </aside>
@@ -69,42 +72,38 @@
     <main class="content">
 
 <section class="page-banner">
-    <span class="eyebrow">Precios especiales</span>
-    <h1>Ofertas</h1>
-    <p>Encuentra piezas seleccionadas con descuentos para que sigas brillando.</p>
+    <div style="display: flex; align-items: baseline; gap: 25px;">
+        <h2 class="section-title">Quiénes Somos</h2>
+        <p>Joyas creadas para mujeres que aman los detalles delicados, femeninos y llenos de luz.</p>
+    </div>
 </section>
 
-<section class="products-section">
-    <h2 class="section-title">Joyas en oferta</h2>
-    <div class="cards-container">
-        <article class="card">
-    <img src="img/oferta.svg" alt="Aretes Estrella - Oferta">
-    <div class="card-content">
-        <h3>Aretes Estrella - Oferta</h3>
-        <p class="description">Aretes brillantes con precio especial por temporada.</p>
-        <p class="price">₡7.500</p>
-        <button onclick="addToCart('Aretes Estrella - Oferta', 7500, 'img/oferta.svg')">Agregar al carrito</button>
-    </div>
-</article>
-<article class="card">
-    <img src="img/oferta.svg" alt="Pulsera Rosa - Oferta">
-    <div class="card-content">
-        <h3>Pulsera Rosa - Oferta</h3>
-        <p class="description">Pulsera romántica con descuento especial.</p>
-        <p class="price">₡8.900</p>
-        <button onclick="addToCart('Pulsera Rosa - Oferta', 8900, 'img/oferta.svg')">Agregar al carrito</button>
-    </div>
-</article>
-<article class="card">
-    <img src="img/oferta.svg" alt="Cadena Luz - Oferta">
-    <div class="card-content">
-        <h3>Cadena Luz - Oferta</h3>
-        <p class="description">Cadena fina y elegante con precio promocional.</p>
-        <p class="price">₡11.900</p>
-        <button onclick="addToCart('Cadena Luz - Oferta', 11900, 'img/oferta.svg')">Agregar al carrito</button>
-    </div>
-</article>
-    </div>
+<section class="info-section">
+    <h2>El corazón de Destellos</h2>
+    <p>
+        Destellos nace con la ilusión de ofrecer joyas hermosas, accesibles y especiales.
+        Cada anillo, collar, pulsera, jueguito, cadena y par de aretes está pensado para
+        acompañarte en momentos importantes y también en tu día a día.
+    </p>
+    <p>
+        Creemos que una joya no solo adorna: también expresa amor, seguridad, ternura y personalidad.
+        Por eso nuestro slogan es <strong>“Brilla por dentro y por fuera”</strong>.
+    </p>
+</section>
+
+<section class="values-grid">
+    <article>
+        <h3>Elegancia</h3>
+        <p>Diseños delicados que combinan con estilos románticos y modernos.</p>
+    </article>
+    <article>
+        <h3>Calidez</h3>
+        <p>Atención cercana para ayudarte a elegir la joya ideal.</p>
+    </article>
+    <article>
+        <h3>Brillo</h3>
+        <p>Piezas pensadas para hacerte sentir especial en cada ocasión.</p>
+    </article>
 </section>
 
     </main>
@@ -135,7 +134,7 @@
         <button onclick="clearCart()" class="clear-cart">Vaciar carrito</button>
         <a
             id="checkout-whatsapp"
-            href="https://wa.me/50688888888"
+            href="https://wa.me/50688857768"
             target="_blank"
             class="checkout-button">
             Comprar por WhatsApp

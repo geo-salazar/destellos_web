@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Importación de Estilos y Fuentes -->
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <title>Inicio | Destellos</title>
+    <title>Registro | Destellos</title>
 </head>
 <body>
+<!-- Control del Menú Hamburguesa para Móviles -->
 <input type="checkbox" id="menu-toggle">
 
+<!-- ENCABEZADO: Branding y Acciones de Usuario -->
 <header class="header">
     <div class="header-left">
         <label for="menu-toggle" class="hamburger" aria-label="Abrir menú">☰</label>
 
-        <a href="index.html" class="brand">
+        <a href="index.php" class="brand">
             <img src="img/logo.svg" alt="Logo Destellos" class="logo">
             <span>Destellos</span>
         </a>
@@ -24,11 +27,15 @@
     <p class="slogan">Brilla por dentro y por fuera</p>
 
     <div class="header-actions">
-    <a href="iniciar-sesion.html" class="login-button">
+    <a href="ofertas.php" class="offers-button">
+        Ofertas
+    </a>
+
+    <a href="iniciar-sesion.php" class="login-button">
         Iniciar sesión
     </a>
 
-    <a href="registro.html" class="register-button">
+    <a href="registro.php" class="register-button">
         Registrarse
     </a>
 
@@ -39,45 +46,37 @@
 </header>
 
 <div class="layout">
+    <!-- NAVEGACIÓN LATERAL -->
     <aside class="sidebar">
         <nav>
             <ul>
-                <li><a href="index.html">Página principal</a></li>
-                <li><a href="quienes-somos.html">Quiénes somos</a></li>
+                <li><a href="index.php">Página principal</a></li>
+                <li><a href="quienes-somos.php">Quiénes somos</a></li>
                
                 
                 <li class="menu-group">
                     <details open>
                         <summary>Joyería</summary>
                         <ul class="submenu">
-                            <li><a href="anillos.html">Anillos</a></li>
-                            <li><a href="aretes.html">Aretes</a></li>
-                            <li><a href="collares.html">Collares</a></li>
-                            <li><a href="pulseras.html">Pulseras</a></li>
-                            <li><a href="jueguitos.html">Jueguitos</a></li>
-                            <li><a href="cadenas.html">Cadenas</a></li>
+                            <li><a href="anillos.php">Anillos</a></li>
+                            <li><a href="aretes.php">Aretes</a></li>
+                            <li><a href="collares.php">Collares</a></li>
+                            <li><a href="pulseras.php">Pulseras</a></li>
+                            <li><a href="jueguitos.php">Jueguitos</a></li>
+                            <li><a href="cadenas.php">Cadenas</a></li>
                         </ul>
                     </details>
                 </li>
 
-                <li><a href="ofertas.html">Ofertas</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="contacto.php">Contacto</a></li>
             </ul>
         </nav>
     </aside>
 
-
-
-
-
-
-
-
+<!-- CONTENIDO PRINCIPAL: Formulario de Registro -->
 <main class="content">
 
     <section class="page-banner">
-        <span class="eyebrow">Crea tu cuenta</span>
-        <h1>Registrarse</h1>
         <p>
             Forma parte de Destellos y guarda tus datos para futuras compras.
         </p>
@@ -135,7 +134,7 @@
 
                 <p class="auth-link-text">
                     ¿Ya tienes cuenta?
-                    <a href="iniciar-sesion.html">Inicia sesión aquí</a>
+                    <a href="iniciar-sesion.php">Inicia sesión aquí</a>
                 </p>
 
             </form>

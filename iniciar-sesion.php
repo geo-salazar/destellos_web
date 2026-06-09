@@ -18,8 +18,8 @@
         <div class="header-left">
             <label for="menu-toggle" class="hamburger" aria-label="Abrir menú">☰</label>
 
-            <a href="index.html" class="brand">
-                <img src="img/logo.svg" alt="Logo Destellos" class="logo">
+            <a href="index.php" class="brand">
+                <img src="img/logod.svg" alt="Logo Destellos" class="logo">
                 <span>Destellos</span>
             </a>
         </div>
@@ -27,11 +27,15 @@
         <p class="slogan">Brilla por dentro y por fuera</p>
 
         <div class="header-actions">
-            <a href="iniciar-sesion.html" class="login-button">
+            <a href="ofertas.php" class="offers-button">
+                Ofertas
+            </a>
+
+            <a href="iniciar-sesion.php" class="login-button">
                 Iniciar sesión
             </a>
 
-            <a href="registro.html" class="register-button">
+            <a href="registro.php" class="register-button">
                 Registrarse
             </a>
 
@@ -46,27 +50,26 @@
         <aside class="sidebar">
             <nav>
                 <ul>
-                    <li><a href="index.html">Página principal</a></li>
-                    <li><a href="quienes-somos.html">Quiénes somos</a></li>
+                    <li><a href="index.php">Página principal</a></li>
+                    <li><a href="quienes-somos.php">Quiénes somos</a></li>
 
                     <li class="menu-group">
                         <details open>
                             <summary>Joyería</summary>
                             <ul class="submenu">
-                                <li><a href="anillos.html">Anillos</a></li>
-                                <li><a href="aretes.html">Aretes</a></li>
-                                <li><a href="collares.html">Collares</a></li>
-                                <li><a href="pulseras.html">Pulseras</a></li>
-                                <li><a href="jueguitos.html">Jueguitos</a></li>
-                                <li><a href="cadenas.html">Cadenas</a></li>
+                                <li><a href="anillos.php">Anillos</a></li>
+                                <li><a href="aretes.php">Aretes</a></li>
+                                <li><a href="collares.php">Collares</a></li>
+                                <li><a href="pulseras.php">Pulseras</a></li>
+                                <li><a href="jueguitos.php">Jueguitos</a></li>
+                                <li><a href="cadenas.php">Cadenas</a></li>
                             </ul>
                         </details>
                     </li>
 
-                    <li><a href="ofertas.html">Ofertas</a></li>
-                    <li><a href="iniciar-sesion.html">Iniciar sesión</a></li>
-                    <li><a href="registro.html">Registrarse</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="iniciar-sesion.php">Iniciar sesión</a></li>
+                    <li><a href="registro.php">Registrarse</a></li>
+                    <li><a href="contacto.php">Contacto</a></li>
                 </ul>
             </nav>
         </aside>
@@ -74,8 +77,6 @@
         <main class="content">
 
             <section class="page-banner">
-                <span class="eyebrow">Bienvenida de nuevo</span>
-                <h1>Iniciar sesión</h1>
                 <p>
                     Ingresa a tu cuenta para consultar tus datos, compras y productos favoritos.
                 </p>
@@ -111,7 +112,7 @@
 
                         <p class="auth-link-text">
                             ¿No tienes cuenta?
-                            <a href="registro.html">Regístrate aquí</a>
+                            <a href="registro.php">Regístrate aquí</a>
                         </p>
 
                     </form>
@@ -148,7 +149,7 @@
                 Vaciar carrito
             </button>
 
-            <a id="checkout-whatsapp" href="https://wa.me/50688888888" target="_blank" class="checkout-button">
+            <a id="checkout-whatsapp" href="https://wa.me/50688857768" target="_blank" class="checkout-button">
                 Comprar por WhatsApp
             </a>
         </div>

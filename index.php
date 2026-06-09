@@ -3,19 +3,22 @@
 <head>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Estilos globales y tipografías -->
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <title>Inicio | Destellos</title>
 </head>
 <body>
+<!-- Control de estado para el menú hamburguesa en móviles -->
 <input type="checkbox" id="menu-toggle">
 
+<!-- Encabezado: Contiene el logo, eslogan y botones de acción -->
 <header class="header">
     <div class="header-left">
         <label for="menu-toggle" class="hamburger" aria-label="Abrir menú">☰</label>
 
-        <a href="index.html" class="brand">
+        <a href="index.php" class="brand">
             <img src="img/logo.svg" alt="Logo Destellos" class="logo">
             <span>Destellos</span>
         </a>
@@ -24,11 +27,19 @@
     <p class="slogan">Brilla por dentro y por fuera</p>
 
     <div class="header-actions">
-        <a href="iniciar-sesion.html" class="login-button">
+        <a href="admin_login.php" class="login-button" style="background: #7a284c; color: white; border: none;">
+            Panel Admin
+        </a>
+
+        <a href="ofertas.php" class="offers-button">
+            Ofertas
+        </a>
+
+        <a href="iniciar-sesion.php" class="login-button">
             Iniciar sesión
         </a>
 
-        <a href="registro.html" class="register-button">
+        <a href="registro.php" class="register-button">
             Registrarse
         </a>
 
@@ -39,58 +50,53 @@
 </header>
 
 <div class="layout">
+    <!-- Navegación lateral para categorías y páginas principales -->
     <aside class="sidebar">
         <nav>
             <ul>
-                <li><a href="index.html">Página principal</a></li>
-                <li><a href="quienes-somos.html">Quiénes somos</a></li>
-                <li><a href="iniciar-sesion.html">Iniciar sesión</a></li>
-                <li><a href="registro.html">Registrarse</a></li>
+                <li><a href="index.php">Página principal</a></li>
+                <li><a href="quienes-somos.php">Quiénes somos</a></li>
                 
                 <li class="menu-group">
                     <details open>
                         <summary>Joyería</summary>
                         <ul class="submenu">
-                            <li><a href="anillos.html">Anillos</a></li>
-                            <li><a href="aretes.html">Aretes</a></li>
-                            <li><a href="collares.html">Collares</a></li>
-                            <li><a href="pulseras.html">Pulseras</a></li>
-                            <li><a href="jueguitos.html">Jueguitos</a></li>
-                            <li><a href="cadenas.html">Cadenas</a></li>
+                            <li><a href="anillos.php">Anillos</a></li>
+                            <li><a href="aretes.php">Aretes</a></li>
+                            <li><a href="collares.php">Collares</a></li>
+                            <li><a href="pulseras.php">Pulseras</a></li>
+                            <li><a href="jueguitos.php">Jueguitos</a></li>
+                            <li><a href="cadenas.php">Cadenas</a></li>
                         </ul>
                     </details>
                 </li>
 
-                <li><a href="ofertas.html">Ofertas</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="contacto.php">Contacto</a></li>
             </ul>
         </nav>
     </aside>
 
+    <!-- Área de contenido dinámico -->
     <main class="content">
 
-<section class="hero">
-    <div class="hero-text">
-        <span class="eyebrow">Joyería romántica y delicada</span>
-        <h1>Destellos</h1>
-        <p>
-            Joyas para resaltar tu belleza, iluminar tus momentos y recordarte que
-            mereces brillar todos los días.
-        </p>
-        <a href="ofertas.html" class="btn">Ver ofertas</a>
+<!-- Sección de bienvenida (Hero) -->
+<section class="page-banner">
+    <div style="display: flex; align-items: baseline; gap: 25px;">
+        <h2 class="section-title">Inicio</h2>
+        <p>Joyas para resaltar tu belleza, iluminar tus momentos y recordarte que mereces brillar todos los días.</p>
     </div>
 </section>
 
+<!-- Grid de productos destacados -->
 <section class="products-section">
-    <h2 class="section-title">Colección destacada</h2>
     <div class="cards-container">
         <article class="card">
-    <img src="img/anillo.svg" alt="Anillo Rose">
+    <img src="img/anillorose.jpg" alt="Anillo Rose">
     <div class="card-content">
         <h3>Anillo Rose</h3>
         <p class="description">Anillo delicado con acabado brillante. ideal para un estilo romántico.</p>
         <p class="price">₡12.500</p>
-        <button onclick="addToCart('Anillo Rose'. 12500. 'img/anillo.svg')">Agregar al carrito</button>
+        <button onclick="addToCart('Anillo Rose', 12500, 'img/anillo.svg')">Agregar al carrito</button>
     </div>
 </article>
 <article class="card">
@@ -99,7 +105,7 @@
         <h3>Collar Destello</h3>
         <p class="description">Collar fino y elegante para resaltar tu belleza con sutileza.</p>
         <p class="price">₡18.900</p>
-        <button onclick="addToCart('Collar Destello'. 18900. 'img/collar.svg')">Agregar al carrito</button>
+        <button onclick="addToCart('Collar Destello', 18900, 'img/collar.svg')">Agregar al carrito</button>
     </div>
 </article>
 <article class="card">
@@ -108,7 +114,7 @@
         <h3>Pulsera Aurora</h3>
         <p class="description">Pulsera femenina con detalles brillantes y sofisticados.</p>
         <p class="price">₡10.800</p>
-        <button onclick="addToCart('Pulsera Aurora'. 10800. 'img/pulsera.svg')">Agregar al carrito</button>
+        <button onclick="addToCart('Pulsera Aurora', 10800, 'img/pulsera.svg')">Agregar al carrito</button>
     </div>
 </article>
 <article class="card">
@@ -117,16 +123,16 @@
         <h3>Aretes Luna</h3>
         <p class="description">Aretes pequeños y luminosos. perfectos para todos los días.</p>
         <p class="price">₡9.500</p>
-        <button onclick="addToCart('Aretes Luna'. 9500. 'img/aretes.svg')">Agregar al carrito</button>
+        <button onclick="addToCart('Aretes Luna', 9500, 'img/aretes.svg')">Agregar al carrito</button>
     </div>
 </article>
 <article class="card">
     <img src="img/jueguito.svg" alt="Jueguito Romance">
     <div class="card-content">
-        <h3>Jueguito Romanccce</h3>
+        <h3>Jueguito Romance</h3>
         <p class="description">Conjunto especial para lucir radiante en ocasiones únicas.</p>
         <p class="price">₡27.900</p>
-        <button onclick="addToCart('Jueguito Romance'. 27900. 'img/jueguito.svg')">Agregar al carrito</button>
+        <button onclick="addToCart('Jueguito Romance', 27900, 'img/jueguito.svg')">Agregar al carrito</button>
     </div>
 </article>
 <article class="card">
@@ -135,7 +141,7 @@
         <h3>Cadena Luz</h3>
         <p class="description">Cadena fina con acabado brillante y diseño minimalista.</p>
         <p class="price">₡13.900</p>
-        <button onclick="addToCart('Cadena Luz'. 13900. 'img/cadena.svg')">Agregar al carrito</button>
+        <button onclick="addToCart('Cadena Luz', 13900, 'img/cadena.svg')">Agregar al carrito</button>
     </div>
 </article>
     </div>
@@ -144,6 +150,7 @@
     </main>
 </div>
 
+<!-- Botón de contacto directo por WhatsApp -->
 <a
     class="whatsapp-float"
     href="https://wa.me/50688857768?text=Hola%20Destellos%2C%20quiero%20informaci%C3%B3n%20sobre%20sus%20joyas."
@@ -152,7 +159,31 @@
     ✆
 </a>
 
+<!-- Panel lateral del carrito de compras -->
+<div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+<section class="cart-panel" id="cart-panel" aria-label="Carrito de compras">
+    <div class="cart-header">
+        <h2>Tu carrito</h2>
+        <button onclick="toggleCart()" class="close-cart">×</button>
+    </div>
 
+    <div id="cart-items" class="cart-items">
+        <p class="empty-cart">Tu carrito está vacío.</p>
+    </div>
+
+    <div class="cart-footer">
+        <p>Total: <strong id="cart-total">₡0</strong></p>
+        <button onclick="clearCart()" class="clear-cart">Vaciar carrito</button>
+        <a id="checkout-whatsapp"
+           href="https://wa.me/50688857768"
+           target="_blank"
+           class="checkout-button">
+            Comprar por WhatsApp
+        </a>
+    </div>
+</section>
+
+<!-- Lógica de funcionalidad del sitio -->
 <script src="script.js"></script>
 
 </body>

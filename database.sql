@@ -1,12 +1,10 @@
 -- Script de base de datos para Destellos Joyería (PostgreSQL)
 
--- 1. Crear extensiones útiles (opcional)
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-
--- 2. Definir Enums
+-- Definición de estados válidos para el flujo de ventas
+DROP TYPE IF EXISTS estado_pedido CASCADE;
 CREATE TYPE estado_pedido AS ENUM ('pendiente', 'pagado', 'enviado', 'cancelado');
 
--- 3. Tabla de Categorías
+-- Categorización de la joyería para filtros y navegación
 CREATE TABLE categorias (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL UNIQUE,
@@ -14,7 +12,7 @@ CREATE TABLE categorias (
     fecha_creacion TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
 );
 
--- 4. Tabla de Productos
+-- Catálogo principal de productos y control de existencias
 CREATE TABLE productos (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
@@ -28,7 +26,7 @@ CREATE TABLE productos (
         REFERENCES categorias(id) ON DELETE SET NULL
 );
 
--- 5. Tabla de Usuarios
+-- Información de clientes y credenciales de acceso
 CREATE TABLE usuarios (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
@@ -39,7 +37,7 @@ CREATE TABLE usuarios (
     fecha_registro TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
 );
 
--- 6. Tabla de Pedidos
+-- Encabezado de la orden de compra
 CREATE TABLE pedidos (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     usuario_id INT NOT NULL,
@@ -50,11 +48,11 @@ CREATE TABLE pedidos (
         REFERENCES usuarios(id) ON DELETE CASCADE
 );
 
--- 7. Detalle de Pedidos
+-- Relación de productos específicos incluidos en cada pedido (N a N)
 CREATE TABLE detalle_pedidos (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    pedido_id INT NOT NULL,
-    producto_id INT NOT NULL,
+    pedido_id INT,
+    producto_id INT,
     cantidad INT NOT NULL CHECK (cantidad > 0),
     precio_unitario DECIMAL(12, 2) NOT NULL,
     CONSTRAINT fk_pedido FOREIGN KEY (pedido_id) 
@@ -63,13 +61,13 @@ CREATE TABLE detalle_pedidos (
         REFERENCES productos(id) ON DELETE RESTRICT
 );
 
--- 8. Mensajes de Contacto
+-- Almacenamiento de consultas enviadas desde el formulario web
 CREATE TABLE mensajes_contacto (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    nombre VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
+    nombre VARCHAR(100),
+    email VARCHAR(100),
     asunto VARCHAR(200),
-    mensaje TEXT NOT NULL,
+    mensaje TEXT,
     fecha_envio TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
 );
 

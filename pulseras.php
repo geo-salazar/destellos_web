@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="styles.css">
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <title>Cadenas | Destellos</title>
+    <title>Pulseras | Destellos</title>
 </head>
 <body>
 <input type="checkbox" id="menu-toggle">
@@ -15,7 +15,7 @@
     <div class="header-left">
         <label for="menu-toggle" class="hamburger" aria-label="Abrir menú">☰</label>
 
-        <a href="index.html" class="brand">
+        <a href="index.php" class="brand">
             <img src="img/logo.svg" alt="Logo Destellos" class="logo">
             <span>Destellos</span>
         </a>
@@ -24,11 +24,15 @@
     <p class="slogan">Brilla por dentro y por fuera</p>
 
     <div class="header-actions">
-        <a href="iniciar-sesion.html" class="login-button">
+        <a href="ofertas.php" class="offers-button">
+            Ofertas
+        </a>
+
+        <a href="iniciar-sesion.php" class="login-button">
             Iniciar sesión
         </a>
 
-        <a href="registro.html" class="register-button">
+        <a href="registro.php" class="register-button">
             Registrarse
         </a>
 
@@ -42,26 +46,25 @@
     <aside class="sidebar">
         <nav>
             <ul>
-                <li><a href="index.html">Página principal</a></li>
-                <li><a href="quienes-somos.html">Quiénes somos</a></li>
-             
+                <li><a href="index.php">Página principal</a></li>
+                <li><a href="quienes-somos.php">Quiénes somos</a></li>
+              
 
                 <li class="menu-group">
                     <details open>
                         <summary>Joyería</summary>
                         <ul class="submenu">
-                            <li><a href="anillos.html">Anillos</a></li>
-                            <li><a href="aretes.html">Aretes</a></li>
-                            <li><a href="collares.html">Collares</a></li>
-                            <li><a href="pulseras.html">Pulseras</a></li>
-                            <li><a href="jueguitos.html">Jueguitos</a></li>
-                            <li><a href="cadenas.html">Cadenas</a></li>
+                            <li><a href="anillos.php">Anillos</a></li>
+                            <li><a href="aretes.php">Aretes</a></li>
+                            <li><a href="collares.php">Collares</a></li>
+                            <li><a href="pulseras.php">Pulseras</a></li>
+                            <li><a href="jueguitos.php">Jueguitos</a></li>
+                            <li><a href="cadenas.php">Cadenas</a></li>
                         </ul>
                     </details>
                 </li>
 
-                <li><a href="ofertas.html">Ofertas</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="contacto.php">Contacto</a></li>
             </ul>
         </nav>
     </aside>
@@ -69,39 +72,48 @@
     <main class="content">
 
 <section class="page-banner">
-    <span class="eyebrow">Colección Destellos</span>
-    <h1>Cadenas</h1>
-    <p>Cadenas finas, sutiles y fáciles de combinar.</p>
+    <div>
+        <nav aria-label="Breadcrumb">
+            <ul class="breadcrumbs">
+                <li><a href="index.php">Inicio</a></li>
+                <li>Joyería</li>
+                <li>Pulseras</li>
+            </ul>
+        </nav>
+        <div style="display: flex; align-items: baseline; gap: 25px;">
+            <h2 class="section-title">Pulseras</h2>
+            <p>Encanto y feminidad en cada movimiento.</p>
+        </div>
+    </div>
 </section>
 
 <section class="products-section">
-    <h2 class="section-title">Cadenas</h2>
     <div class="cards-container">
         <article class="card">
-    <img src="img/cadena.svg" alt="Cadena Luz">
+    <img src="img/pulsera.svg" alt="Pulsera Aurora">
     <div class="card-content">
-        <h3>Cadena Luz</h3>
-        <p class="description">Cadena fina con acabado brillante y diseño minimalista.</p>
-        <p class="price">₡13.900</p>
-        <button onclick="addToCart('Cadena Luz'. 13900, 'img/cadena.svg')">Agregar al carrito</button>
+        <h3>Pulsera Aurora</h3>
+        <p class="description">Pulsera femenina con detalles brillantes. dulce y sofisticada.</p>
+        <p class="price">₡10.800</p>
+        <button onclick="addToCart('Pulsera Aurora', 10800, 'img/pulsera.svg')">Agregar al carrito</button>
     </div>
 </article>
 <article class="card">
-    <img src="img/cadena.svg" alt="Cadena Rosa">
+    <img src="img/pulsera.svg" alt="Pulsera Encanto">
     <div class="card-content">
-        <h3>Cadena Rosa</h3>
-        <p class="description">Diseño delicado en tono romántico para todos los días.</p>
-        <p class="price">₡15.900</p>
-        <button onclick="addToCart('Cadena Rosa', 15900, 'img/cadena.svg')">Agregar al carrito</button>
+        <h3>Pulsera Encanto</h3>
+        <p class="description">Diseño delicado para acompañar tus looks favoritos.</p>
+        <p class="price">₡9.900</p>
+        <button onclick="addToCart('Pulsera Encanto', 9900, 'img/pulsera.svg')">Agregar al carrito</button>
     </div>
 </article>
 <article class="card">
-    <img src="img/cadena.svg" alt="Cadena Elegance">
+    <img src="img/pulsera.svg" alt="Pulsera Rosa">
     <div class="card-content">
-        <h3>Cadena Elegance</h3>
-        <p class="description">Cadena sofisticada para combinar con tus dijes favoritos.</p>
-        <p class="price">₡17.500</p>
-        <button onclick="addToCart('Cadena Elegance', 17500, 'img/cadena.svg')">Agregar al carrito</button>
+        <h3>Pulsera Rosa</h3>
+        <p class="description">Pulsera romántica con brillo suave y elegante.</p>
+        <p class="price">₡11.500</p>
+        <button onclick="addToCart('Pulsera Rosa', 11500, 'img/pulsera.svg')">Agregar al carrito</button>
     </div>
 </article>
     </div>
@@ -135,7 +147,7 @@
         <button onclick="clearCart()" class="clear-cart">Vaciar carrito</button>
         <a
             id="checkout-whatsapp"
-            href="https://wa.me/50688888888"
+            href="https://wa.me/50688857768"
             target="_blank"
             class="checkout-button">
             Comprar por WhatsApp

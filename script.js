@@ -1,13 +1,17 @@
+// Inicialización del carrito: recupera datos guardados o inicia un arreglo vacío
 let cart = JSON.parse(localStorage.getItem("destellosCart")) || [];
 
+// Guarda el estado actual del carrito en el navegador
 function saveCart() {
     localStorage.setItem("destellosCart", JSON.stringify(cart));
 }
 
+// Formatea números a moneda local (Colones costarricenses)
 function formatMoney(value) {
     return "₡" + value.toLocaleString("es-CR");
 }
 
+// Añade un producto al carrito o incrementa su cantidad si ya existe
 function addToCart(name, price, image) {
     const existingProduct = cart.find(item => item.name === name);
 
@@ -27,6 +31,7 @@ function addToCart(name, price, image) {
     openCart();
 }
 
+// Refresca la interfaz visual del carrito (conteo, lista de items y total)
 function updateCart() {
     const cartItems = document.getElementById("cart-items");
     const cartCount = document.getElementById("cart-count");
@@ -85,10 +90,11 @@ function updateCart() {
 
     if (checkoutWhatsapp) {
         const message = createWhatsappMessage(total);
-        checkoutWhatsapp.href = "https://wa.me/50688888888?text=" + encodeURIComponent(message);
+        checkoutWhatsapp.href = "https://wa.me/50688857768?text=" + encodeURIComponent(message);
     }
 }
 
+// Genera el texto dinámico para enviar el pedido por WhatsApp
 function createWhatsappMessage(total) {
     if (cart.length === 0) {
         return "Hola Destellos, quiero información sobre sus joyas.";
@@ -134,6 +140,7 @@ function clearCart() {
     updateCart();
 }
 
+// Abre el panel lateral del carrito
 function openCart() {
     const cartPanel = document.getElementById("cart-panel");
     const cartOverlay = document.getElementById("cart-overlay");
@@ -147,6 +154,7 @@ function openCart() {
     }
 }
 
+// Alterna la visibilidad del carrito (abrir/cerrar)
 function toggleCart() {
     const cartPanel = document.getElementById("cart-panel");
     const cartOverlay = document.getElementById("cart-overlay");
@@ -160,4 +168,5 @@ function toggleCart() {
     }
 }
 
+// Asegura que la UI esté actualizada al cargar la página
 document.addEventListener("DOMContentLoaded", updateCart);

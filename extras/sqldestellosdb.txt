@@ -1,0 +1,98 @@
+-- Script de base de datos para Destellos Joyería (MySQL 8+)
+
+-- Eliminar tablas si existen, en orden correcto por llaves foráneas
+DROP TABLE IF EXISTS detalle_pedidos;
+DROP TABLE IF EXISTS pedidos;
+DROP TABLE IF EXISTS productos;
+DROP TABLE IF EXISTS usuarios;
+DROP TABLE IF EXISTS categorias;
+DROP TABLE IF EXISTS mensajes_contacto;
+
+-- Categorización de la joyería para filtros y navegación
+CREATE TABLE categorias (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL UNIQUE,
+    descripcion TEXT,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Catálogo principal de productos y control de existencias
+CREATE TABLE productos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT,
+    precio DECIMAL(12, 2) NOT NULL CHECK (precio >= 0),
+    imagen_url VARCHAR(255),
+    stock INT DEFAULT 0 CHECK (stock >= 0),
+    categoria_id INT,
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    
+    CONSTRAINT fk_categoria 
+        FOREIGN KEY (categoria_id) 
+        REFERENCES categorias(id) 
+        ON DELETE SET NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Información de clientes y credenciales de acceso
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    telefono VARCHAR(20),
+    direccion TEXT,
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Encabezado de la orden de compra
+CREATE TABLE pedidos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario_id INT NOT NULL,
+    total DECIMAL(12, 2) NOT NULL DEFAULT 0,
+    estado ENUM('pendiente', 'pagado', 'enviado', 'cancelado') DEFAULT 'pendiente',
+    fecha_pedido TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    
+    CONSTRAINT fk_usuario 
+        FOREIGN KEY (usuario_id) 
+        REFERENCES usuarios(id) 
+        ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Relación de productos específicos incluidos en cada pedido
+CREATE TABLE detalle_pedidos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    pedido_id INT,
+    producto_id INT,
+    cantidad INT NOT NULL CHECK (cantidad > 0),
+    precio_unitario DECIMAL(12, 2) NOT NULL,
+    
+    CONSTRAINT fk_pedido 
+        FOREIGN KEY (pedido_id) 
+        REFERENCES pedidos(id) 
+        ON DELETE CASCADE,
+        
+    CONSTRAINT fk_producto 
+        FOREIGN KEY (producto_id) 
+        REFERENCES productos(id) 
+        ON DELETE RESTRICT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Almacenamiento de consultas enviadas desde el formulario web
+CREATE TABLE mensajes_contacto (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100),
+    email VARCHAR(100),
+    asunto VARCHAR(200),
+    mensaje TEXT,
+    fecha_envio TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Datos iniciales de categorías
+INSERT INTO categorias (nombre) VALUES 
+('Anillos'), 
+('Aretes'), 
+('Collares'), 
+('Pulseras'), 
+('Jueguitos'), 
+('Cadenas'), 
+('Ofertas');

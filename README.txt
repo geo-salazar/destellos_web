@@ -2,16 +2,16 @@
 
 Archivos incluidos:
 
-- index.html
-- quienes-somos.html
-- contacto.html
-- ofertas.html
-- anillos.html
-- aretes.html
-- collares.html
-- pulseras.html
-- jueguitos.html
-- cadenas.html
+- index.php
+- quienes-somos.php
+- contacto.php
+- ofertas.php
+- anillos.php
+- aretes.php
+- collares.php
+- pulseras.php
+- jueguitos.php
+- cadenas.php
 - styles.css
 - script.js
 - carpeta img con imágenes SVG de ejemplo
